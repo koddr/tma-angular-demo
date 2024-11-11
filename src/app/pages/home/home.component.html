@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="grid-rows-auto gap-xl">
+    <h1 class="tui-text_h1">Привет.</h1>
+    <p class="tui-text_body-l-2">
+      Я&nbsp;&mdash; полноценный Mini App в Telegram, который был создан в
+      качестве демо для
+      <a href="https://github.com/koddr/tma-angular-demo" target="_blank"
+        >доклада</a
+      >&nbsp;<em>«Telegram Mini Apps. Или где ещё хорош Angular?»</em>.
+    </p>
+    <div class="grid-rows-auto gap-lg">
+      <div tuiAppearance="floating" tuiCardLarge>
+        <p tuiTitle>
+          Что под капотом?
+          <span tuiSubtitle>
+            Я был создан с использованием
+            <a href="https://angular.dev" target="_blank">Angular</a> и
+            <a href="https://ngrx.io/guide/signals" target="_blank"
+              >NgRx Signals</a
+            >. Для удобной работы с Telegram SDK у меня есть TypeScript-враппер
+            <a
+              href="https://github.com/Telegram-Mini-Apps/telegram-apps"
+              target="_blank"
+              >&#64;telegram-apps/sdk</a
+            >.
+          </span>
+        </p>
+      </div>
+      <div tuiAppearance="floating" tuiCardLarge>
+        <p tuiTitle>
+          Какой UI-кит использован?
+          <span tuiSubtitle>
+            За мой внешний вид отвечает
+            <a href="https://taiga-ui.dev" target="_blank">Taiga UI</a>, а все
+            иконки были взяты из тулкита
+            <a href="https://lucide.dev" target="_blank">Lucide</a>.
+          </span>
+        </p>
+      </div>
+      <div tuiAppearance="floating" tuiCardLarge>
+        <header tuiHeader>
+          <h2 tuiTitle>
+            Полезные ссылки
+            <span tuiSubtitle>
+              Для желающих «поиграться» с технологией Telegram Mini Apps
+              самостоятельно.
+            </span>
+          </h2>
+        </header>
+        <section class="flex-cols-auto gap">
+          <a
+            href="https://t.me/TelegramMiniApp"
+            target="_blank"
+            tuiAppearance="neutral"
+            tuiCardMedium
+          >
+            <tui-icon
+              icon="@tui.github"
+              [style.color]="'var(--tui-text-tertiary)'"
+            />
+            <h2 tuiTitle [style.margin-top]="'auto'">
+              GitHub
+              <span tuiSubtitle>Документация и исходный код проекта</span>
+            </h2>
+          </a>
+          <a
+            href="https://t.me/koddr"
+            target="_blank"
+            tuiAppearance="neutral"
+            tuiCardMedium
+          >
+            <tui-icon
+              icon="@tui.message-square"
+              [style.color]="'var(--tui-text-tertiary)'"
+            />
+            <h2 tuiTitle [style.margin-top]="'auto'">
+              Vic Shóstak
+              <span tuiSubtitle
+                >Telegram автора для вопросов и предложений</span
+              >
+            </h2>
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

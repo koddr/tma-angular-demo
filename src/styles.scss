@@ -1,0 +1,42 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+/* You can add global styles to this file, and also import other style files */
+
+.container {
+  padding: 1rem;
+
+  a {
+    color: var(--tui-text-action);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .grid-rows-auto {
+    display: grid;
+    grid-template-rows: auto;
+  }
+
+  .flex-cols-auto {
+    display: flex;
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+    overflow: scroll;
+  }
+
+  .grid-rows-auto,
+  .flex-cols-auto {
+    &.gap {
+      gap: 0.72rem;
+    }
+
+    &.gap-lg {
+      gap: 1.32rem;
+    }
+
+    &.gap-xl {
+      gap: 1.96rem;
+    }
+  }
+}
