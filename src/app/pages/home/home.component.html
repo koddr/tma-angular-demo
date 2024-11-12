@@ -3,10 +3,10 @@
     <h1 class="tui-text_h1">Привет.</h1>
     <p class="tui-text_body-l-2">
       Я&nbsp;&mdash; полноценный Mini App в Telegram, который был создан в
-      качестве демо для
-      <a href="https://github.com/koddr/tma-angular-demo" target="_blank"
-        >доклада</a
-      >&nbsp;<em>«Telegram Mini Apps. Или где ещё хорош Angular?»</em>.
+      качестве демо-проекта для
+      <a [href]="links.presentation" target="_blank">доклада</a>&nbsp;<em
+        >«Добро пожаловать в Telegram Mini Apps. Или где ещё хорош Angular?»</em
+      >.
     </p>
     <div class="grid-rows-auto gap-lg">
       <div tuiAppearance="floating" tuiCardLarge>
@@ -14,10 +14,12 @@
           Что под капотом?
           <span tuiSubtitle>
             Внутри используется
-            <a href="https://angular.dev" target="_blank">Angular</a> и
+            <a href="https://angular.dev" target="_blank">Angular</a>,
             <a href="https://ngrx.io/guide/signals" target="_blank"
               >NgRx Signals</a
-            >. Для удобной работы с Telegram SDK у меня есть TypeScript-враппер
+            >
+            и <a href="https://nx.dev" target="_blank">Nx</a>. Для удобной
+            работы с Telegram SDK уже подключен TypeScript-враппер&nbsp;&mdash;
             <a
               href="https://github.com/Telegram-Mini-Apps/telegram-apps"
               target="_blank"
@@ -30,9 +32,8 @@
         <p tuiTitle>
           Какой UI-кит использован?
           <span tuiSubtitle>
-            За мой внешний вид отвечает
-            <a href="https://taiga-ui.dev" target="_blank">Taiga UI</a>, а все
-            иконки были взяты из тулкита
+            <a href="https://taiga-ui.dev" target="_blank">Taiga UI</a> отвечает
+            за мой внешний вид, а все иконки были взяты из тулкита
             <a href="https://lucide.dev" target="_blank">Lucide</a>.
           </span>
         </p>
@@ -42,14 +43,14 @@
           <h2 tuiTitle>
             Полезные ссылки
             <span tuiSubtitle>
-              Для желающих «поиграться» с технологией Telegram Mini Apps
-              самостоятельно.
+              Приглашаю тебя «поиграться» с технологией Telegram Mini Apps
+              самостоятельно, а будут вопросы&nbsp;&mdash; напиши моему автору.
             </span>
           </h2>
         </header>
         <section class="flex-cols-auto gap">
           <a
-            href="https://t.me/TelegramMiniApp"
+            [href]="links.github"
             target="_blank"
             tuiAppearance="neutral"
             tuiCardMedium
@@ -64,7 +65,7 @@
             </h2>
           </a>
           <a
-            href="https://t.me/koddr"
+            [href]="links.author"
             target="_blank"
             tuiAppearance="neutral"
             tuiCardMedium

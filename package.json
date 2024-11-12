@@ -26,6 +26,8 @@
     "@taiga-ui/kit": "^4.14.0",
     "@taiga-ui/layout": "^4.14.0",
     "@taiga-ui/styles": "^4.14.0",
+    "@telegram-apps/sdk": "^2.6.0",
+    "angularx-qrcode": "^18.0.2",
     "rxjs": "7.8.1"
   },
   "devDependencies": {

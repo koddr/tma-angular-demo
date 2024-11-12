@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="grid-rows-auto gap-xl">
+    <h1 class="tui-text_h1">Ой.</h1>
+    <p class="tui-text_body-l-2">
+      Если ты читаешь это сообщение&nbsp;&mdash; значит твоё текущее устройство
+      не поддерживает какой-то функционал Telegram Mini Apps или веб-приложение
+      было открыто вне мессенджера Telegram.
+    </p>
+    <div tuiAppearance="floating" tuiCardLarge>
+      <header tuiHeader>
+        <h2 tuiTitle>
+          И что с этим делать?
+          <span tuiSubtitle>
+            Попробуй открыть эту страницу внутри мессенджера Telegram: наведи
+            камеру смартфона на QR-код или кликни на блок со ссылкой. Если ты
+            снова попадёшь на эту страницу,
+            <a
+              href="https://github.com/koddr/tma-angular-demo/issues"
+              target="_blank"
+              >создай issue</a
+            >
+            на GitHub проекта.
+          </span>
+        </h2>
+      </header>
+      <section class="flex-cols-auto gap">
+        <qrcode
+          [qrdata]="'https://t.me/tma_angular_demo_bot'"
+          [errorCorrectionLevel]="'M'"
+          [width]="117"
+          [margin]="0"
+          [colorDark]="'#ffffff'"
+          [colorLight]="'none'"
+          tuiAppearance="neutral"
+          tuiCardMedium
+        />
+        <a
+          href="https://t.me/tma_angular_demo_bot"
+          target="_blank"
+          tuiAppearance="neutral"
+          tuiCardMedium
+        >
+          <tui-icon
+            icon="@tui.bot"
+            [style.color]="'var(--tui-text-tertiary)'"
+          />
+          <h2 tuiTitle [style.margin-top]="'auto'">
+            Демо-бот
+            <span tuiSubtitle>Перейти в мессенджер Telegram</span>
+          </h2>
+        </a>
+      </section>
+    </div>
+  </div>
+</div>
