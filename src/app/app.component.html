@@ -1,4 +1,4 @@
-<tui-root>
+<tui-root [attr.tuiTheme]="darkMode() ? 'dark' : null">
   <router-outlet />
   <ng-container ngProjectAs="tuiOverContent" />
   <ng-container ngProjectAs="tuiOverDialogs" />

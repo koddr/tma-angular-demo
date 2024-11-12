@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TuiRoot } from '@taiga-ui/core';
+import { TUI_DARK_MODE, TuiRoot } from '@taiga-ui/core';
 
 @Component({
   standalone: true,
@@ -9,4 +9,6 @@ import { TuiRoot } from '@taiga-ui/core';
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {}
+export class AppComponent {
+  protected readonly darkMode = inject(TUI_DARK_MODE);
+}
