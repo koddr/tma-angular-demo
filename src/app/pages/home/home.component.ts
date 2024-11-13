@@ -40,13 +40,14 @@ export class HomePageComponent implements OnInit, OnDestroy {
       return;
     }
 
+    // Показываем кнопку «Тапалка тут» c дополнительными параметрами.
     setMainButtonParams({
       hasShineEffect: true,
       isEnabled: true,
       isVisible: true,
       text: 'Тапалка тут',
     });
-    onMainButtonClick(() => this.router.navigate(['tap-me']));
+    onMainButtonClick(() => this.router.navigate(['tap-me'])); // обрабатываем нажатие на кнопку «Тапалка тут»
   }
 
   ngOnDestroy() {

@@ -1,10 +1,25 @@
 <div class="container">
   <div class="grid-rows-auto gap-xl">
     <h1 class="tui-text_h1">Тапай! :D</h1>
-    <p class="tui-text_body-l-2">
-      Если ты читаешь это сообщение&nbsp;&mdash; значит твоё текущее устройство
-      не поддерживает какой-то функционал Telegram Mini Apps или веб-приложение
-      было открыто вне мессенджера Telegram.
-    </p>
+    <div class="tui-text_body-l-2">
+      На этой странице ты можешь тапать на блок внизу, чтобы увеличивать
+      счётчик, а значение сохранялось в Telegram Cloud Storage.
+    </div>
+    <div tuiAppearance="floating" tuiCardLarge>
+      Через каждые 100 очков будет показан эффект конфетти, чтобы было не так
+      скучно тапать.
+    </div>
+    <tui-block-status [card]="true" [class.card]="true" appDelayClick>
+      <div class="tui-text_h2">{{ store.score() }}</div>
+      <div class="tui-text_body-m-2">счётчик<br />тапов</div>
+    </tui-block-status>
+    <button
+      appearance="outline"
+      tuiButton
+      type="button"
+      (click)="router.navigate([''])"
+    >
+      Назад
+    </button>
   </div>
 </div>

@@ -35,7 +35,7 @@ export class AppComponent implements OnInit, OnDestroy {
   protected readonly router = inject(Router);
   protected readonly darkMode = inject(TUI_DARK_MODE); // подключаем свитчер тёмного стиля от Taiga UI
 
-  ngOnInit() {
+  async ngOnInit() {
     try {
       init(); // инициализация Telegram мини-аппы
       restoreInitData(); // восстановление состояния компонентов
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
       mountMiniApp.ifAvailable(); // монтируем саму мини-аппу
     } catch (error) {
       console.error(error); // если где-то упала ошибка, то показываем её в консоли
-      this.router.navigate(['platform-not-supported']); // делаем редирект на заглушку для этих пользователей
+      // this.router.navigate(['platform-not-supported']); // делаем редирект на заглушку для этих пользователей
       return;
     }
 
