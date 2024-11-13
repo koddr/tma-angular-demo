@@ -41,18 +41,22 @@ export class HomePageComponent implements OnInit, OnDestroy {
     }
 
     setMainButtonParams({
-      backgroundColor: '#000000',
       hasShineEffect: true,
       isEnabled: true,
-      isLoaderVisible: true,
       isVisible: true,
-      text: 'Пошли тапать!',
-      textColor: '#ffffff',
+      text: 'Тапалка тут',
     });
     onMainButtonClick(() => this.router.navigate(['tap-me']));
   }
 
   ngOnDestroy() {
+    // Скрываем кнопку «Тапалка тут».
+    setMainButtonParams({
+      isEnabled: false,
+      isVisible: false,
+    });
+
+    // Размонтируем все ранее смонтированные функциональные компоненты.
     unmountMainButton();
   }
 }

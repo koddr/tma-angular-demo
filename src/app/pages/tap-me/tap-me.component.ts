@@ -34,7 +34,7 @@ export class TapMePageComponent implements OnInit, OnDestroy {
     }
 
     showBackButton();
-    onBackButtonClick(() => this.router.navigate(['home']));
+    onBackButtonClick(() => this.router.navigate(['']));
   }
 
   ngOnDestroy() {
