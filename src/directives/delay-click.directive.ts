@@ -20,7 +20,7 @@ export class DelayClickDirective {
   private abortController: AbortController | null = null; // контроллер для прерывания задержки
 
   @HostListener('click') async onClick() {
-    if (this.abortController) this.abortController.abort(); // прерываем задержку
+    if (this.abortController) this.abortController.abort(); // прерываем задержку, если контроллер не null
 
     this.abortController = new AbortController(); // создаем контроллер для прерывания задержки
     const { signal } = this.abortController; // сигнал контроллера для прерывания
@@ -28,14 +28,14 @@ export class DelayClickDirective {
     try {
       this.store.updateScore(); // обновляем счетчик
 
-      // Добавляем эффект конфетти каждый раз при получении 100 очков:
+      // Добавляем эффект конфетти каждый раз при накоплении 100 тапов:
       if (this.store.score() % 100 === 0) confetti(this.confettiOptions);
 
       // Останавливаем обработку клика после 1 секунды:
       await new Promise((resolve, reject) => {
         const timeout = setTimeout(resolve, 1000); // задержка 1 секунда
         signal.addEventListener('abort', () => {
-          clearTimeout(timeout); // прерываем задержку
+          clearTimeout(timeout); // сбрасываем таймаут
           reject(new DOMException('Aborted', 'AbortError')); // прерываем обработку
         });
       });

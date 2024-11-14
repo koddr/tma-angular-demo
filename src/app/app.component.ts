@@ -33,7 +33,7 @@ import {
 })
 export class AppComponent implements OnInit, OnDestroy {
   protected readonly router = inject(Router);
-  protected readonly darkMode = inject(TUI_DARK_MODE); // подключаем свитчер тёмного стиля от Taiga UI
+  protected readonly darkMode = inject(TUI_DARK_MODE); // подключаем свитчер тёмной темы от Taiga UI
 
   async ngOnInit() {
     try {

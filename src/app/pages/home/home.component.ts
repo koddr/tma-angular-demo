@@ -25,6 +25,7 @@ import {
 export class HomePageComponent implements OnInit, OnDestroy {
   protected readonly router = inject(Router);
 
+  // Объект со ссылками на соцсети и презентацию для удобной работы в шаблоне:
   protected readonly links = {
     author: 'https://t.me/koddr',
     github: 'https://github.com/koddr/tma-angular-demo',
@@ -33,31 +34,32 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     try {
-      mountMainButton.ifAvailable();
+      mountMainButton.ifAvailable(); // монтируем главную кнопку
     } catch (error) {
-      console.error(error);
-      this.router.navigate(['platform-not-supported']);
+      console.error(error); // если где-то упала ошибка, то показываем её в консоли
+      this.router.navigate(['platform-not-supported']); // делаем редирект на заглушку
       return;
     }
 
-    // Показываем кнопку «Тапалка тут» c дополнительными параметрами.
+    // Показываем главную кнопку с названием «Тапалка тут» и доп. параметрами:
     setMainButtonParams({
+      text: 'Тапалка тут',
       hasShineEffect: true,
       isEnabled: true,
       isVisible: true,
-      text: 'Тапалка тут',
     });
-    onMainButtonClick(() => this.router.navigate(['tap-me'])); // обрабатываем нажатие на кнопку «Тапалка тут»
+    onMainButtonClick(() => this.router.navigate(['tap-me'])); // обрабатываем нажатие на главную кнопку
   }
 
   ngOnDestroy() {
-    // Скрываем кнопку «Тапалка тут».
+    // Скрываем главную кнопку:
     setMainButtonParams({
       isEnabled: false,
       isVisible: false,
     });
 
-    // Размонтируем все ранее смонтированные функциональные компоненты.
+    // Размонтируем все ранее смонтированные функциональные компоненты
+    // TypeScript-враппера Telegram SDK в том же порядке:
     unmountMainButton();
   }
 }

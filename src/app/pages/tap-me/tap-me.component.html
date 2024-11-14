@@ -10,7 +10,9 @@
       скучно заниматься этим.
     </div>
     <tui-block-status [card]="true" [class.card]="true" appDelayClick>
-      <div class="tui-text_h2">{{ store.score() }}</div>
+      <div class="tui-text_h2" [tuiSkeleton]="store.isLoading() && 1">
+        {{ store.isLoading() ? '' : store.score() }}
+      </div>
       <div class="tui-text_body-m-2">счётчик<br />тапов</div>
     </tui-block-status>
     <button

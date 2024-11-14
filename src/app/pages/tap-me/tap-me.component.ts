@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { TuiAppearance, TuiButton } from '@taiga-ui/core';
+import { TuiSkeleton } from '@taiga-ui/kit';
 import { TuiBlockStatus, TuiCardLarge } from '@taiga-ui/layout';
 import {
   getCloudStorageItem,
@@ -28,6 +29,7 @@ import { DelayClickDirective } from 'src/directives/delay-click.directive';
     TuiButton,
     TuiAppearance,
     TuiCardLarge,
+    TuiSkeleton,
   ],
   templateUrl: './tap-me.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -58,7 +60,8 @@ export class TapMePageComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     hideBackButton(); // скрываем кнопку «Назад»
 
-    // Размонтируем все ранее смонтированные функциональные компоненты:
+    // Размонтируем все ранее смонтированные функциональные компоненты
+    // TypeScript-враппера Telegram SDK в том же порядке:
     unmountBackButton();
   }
 }
