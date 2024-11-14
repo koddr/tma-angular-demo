@@ -25,9 +25,9 @@ import {
 } from '@telegram-apps/sdk';
 
 @Component({
+  selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, TuiRoot],
-  selector: 'app-root',
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
