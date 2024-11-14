@@ -2,12 +2,8 @@
   <div class="grid-rows-auto gap-xl">
     <h1 class="tui-text_h1">Тапай! :D</h1>
     <div class="tui-text_body-l-2">
-      На этой странице ты можешь тапать на блок внизу, чтобы увеличивать
-      счётчик, а значение сохранялось в Telegram Cloud Storage.
-    </div>
-    <div tuiAppearance="floating" tuiCardLarge>
-      Через каждые 100 тапов будет показан эффект конфетти, чтобы было не так
-      скучно заниматься этим.
+      В этом разделе ты можешь тапать на блок с цифрой, чтобы увеличивать
+      счётчик.
     </div>
     <tui-block-status [card]="true" [class.card]="true" appDelayClick>
       <div class="tui-text_h2" [tuiSkeleton]="store.isLoading() && 1">
@@ -15,6 +11,33 @@
       </div>
       <div class="tui-text_body-m-2">счётчик<br />тапов</div>
     </tui-block-status>
+    <div class="grid-rows-auto gap">
+      <div tuiAppearance="floating" tuiCardLarge>
+        <p tuiTitle>
+          Как это работает?
+          <span tuiSubtitle>
+            Значение твоих тапов будет сохранено в Telegram
+            <a
+              href="https://core.telegram.org/bots/webapps#cloudstorage"
+              target="_blank"
+              >Cloud Storage</a
+            >
+            и доступно по вызову элемента <code>score</code>.
+          </span>
+        </p>
+      </div>
+      <div tuiAppearance="floating" tuiCardLarge>
+        <p tuiTitle>
+          Бонусный эффект
+          <span tuiSubtitle>
+            Через каждые 100 тапов будет запущено
+            <a href="https://github.com/catdad/canvas-confetti" target="_blank"
+              >конфетти на canvas</a
+            >, чтобы было не так скучно заниматься тапаньем.
+          </span>
+        </p>
+      </div>
+    </div>
     <button
       appearance="outline"
       tuiButton

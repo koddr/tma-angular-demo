@@ -6,7 +6,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { TuiAppearance, TuiButton } from '@taiga-ui/core';
+import { TuiAppearance, TuiButton, TuiTitle } from '@taiga-ui/core';
 import { TuiSkeleton } from '@taiga-ui/kit';
 import { TuiBlockStatus, TuiCardLarge } from '@taiga-ui/layout';
 import {
@@ -30,6 +30,7 @@ import { DelayClickDirective } from 'src/directives/delay-click.directive';
     TuiAppearance,
     TuiCardLarge,
     TuiSkeleton,
+    TuiTitle,
   ],
   templateUrl: './tap-me.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
