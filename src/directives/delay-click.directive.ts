@@ -1,5 +1,8 @@
 import { Directive, HostListener, inject } from '@angular/core';
-import { setCloudStorageItem } from '@telegram-apps/sdk';
+import {
+  hapticFeedbackImpactOccurred,
+  setCloudStorageItem,
+} from '@telegram-apps/sdk';
 import confetti from 'canvas-confetti';
 import { ScoreStore } from 'src/app/app.store';
 
@@ -27,6 +30,9 @@ export class DelayClickDirective {
 
     try {
       this.store.updateScore(); // обновляем счетчик
+
+      // Добавляем эффект вибрации при каждом тапе:
+      hapticFeedbackImpactOccurred.ifAvailable('heavy');
 
       // Добавляем эффект конфетти каждый раз при накоплении 100 тапов:
       if (this.store.score() % 100 === 0) confetti(this.confettiOptions);
