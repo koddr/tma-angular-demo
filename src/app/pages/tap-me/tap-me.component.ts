@@ -22,7 +22,6 @@ import { DelayClickDirective } from 'src/directives/delay-click.directive';
 
 @Component({
   selector: 'app-pages-tap-me',
-  standalone: true,
   imports: [
     DelayClickDirective,
     TuiBlockStatus,

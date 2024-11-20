@@ -26,7 +26,6 @@ import {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, TuiRoot],
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

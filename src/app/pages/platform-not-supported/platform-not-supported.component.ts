@@ -5,7 +5,6 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-pages-platform-not-supported',
-  standalone: true,
   imports: [
     TuiAppearance,
     TuiCardMedium,

@@ -17,7 +17,6 @@ import {
 
 @Component({
   selector: 'app-pages-home',
-  standalone: true,
   imports: [TuiAppearance, TuiCardMedium, TuiCardLarge, TuiTitle, TuiIcon],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

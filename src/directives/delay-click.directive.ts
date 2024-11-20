@@ -8,7 +8,6 @@ import { ScoreStore } from 'src/app/app.store';
 
 @Directive({
   selector: '[appDelayClick]',
-  standalone: true,
 })
 export class DelayClickDirective {
   private readonly store = inject(ScoreStore);
