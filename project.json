@@ -34,7 +34,7 @@
           "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
           "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
           "node_modules/@taiga-ui/addon-mobile/styles/taiga-ui-mobile.less",
-          "./src/styles.scss"
+          "./src/styles.less"
         ],
         "scripts": []
       },
