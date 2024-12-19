@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TuiAppearance, TuiIcon, TuiTitle } from '@taiga-ui/core';
 import { TuiCardLarge, TuiCardMedium } from '@taiga-ui/layout';
-import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeComponent } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-pages-platform-not-supported',
@@ -11,7 +11,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     TuiCardLarge,
     TuiTitle,
     TuiIcon,
-    QRCodeModule,
+    QRCodeComponent,
   ],
   templateUrl: './platform-not-supported.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
