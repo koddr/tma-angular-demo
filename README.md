@@ -1,102 +1,67 @@
-# Angular + Telegram Mini Apps
+# Демо для доклада «Добро пожаловать в Telegram Mini Apps. Или где ещё хорош Angular?»
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+<a href="https://t.me/tma_angular_demo_bot" target="_blank"><img src="https://github.com/user-attachments/assets/6bc9f631-b8ae-4b70-a522-c9c541ee2906" width="196" alt="Telegram Mini App demo" align="right" /></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+Презентация доступна в формате PDF по ссылке: https://disk.yandex.ru/i/Mb3w8jf7BsJ-sA
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Демо содержит пример полноценного [Telegram Mini Apps](https://core.telegram.org/bots/webapps) проекта на Angular, который вы можете взять за основу своих проектов.
 
-## Run tasks
+В мини-аппе реализована простейшая «тапалка» с использованием Cloud Storage (от Telegram) и показаны примеры навигации внутри веб-приложения.
 
-To run the dev server for your app, use:
+Используются следующие версии библиотек:
 
-```sh
-npx nx serve .
+- [Angular](https://angular.dev) v19.0.5
+- [NgRx Signals](https://ngrx.io/guide/signals) v19.0.0
+- [Nx](https://nx.dev) v20.2.2
+- [Taiga UI](https://taiga-ui.dev) v4.18.0
+- [@telegram-apps/sdk](https://github.com/Telegram-Mini-Apps/telegram-apps) v2.11.0
+- [angularx-qrcode](https://github.com/cordobo/angularx-qrcode) v19.0.0
+- [canvas-confetti](https://github.com/catdad/canvas-confetti) v1.9.3
+
+И, конечно же, много комментариев (_на русском_) в коде — всё, как мы любим 💞
+
+## Развернуть локально
+
+Клонируйте репозиторий:
+
+```console
+git clone https://github.com/koddr/tma-angular-demo && cd tma-angular-demo
 ```
 
-To create a production bundle:
+Установите зависимости:
 
-```sh
-npx nx build .
+```console
+npm install
 ```
 
-To see all available targets to run for a project, run:
+Запустите dev-сервер:
 
-```sh
-npx nx show project .
+```console
+npm start
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Развернуть в облаке
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Так как я использую для своих (_и не только_) проектов облачные решения от [Timeweb Cloud](https://timeweb.cloud/r/koddr), то буду описывать процесс деплоя на нём.
 
-## Add new projects
+> [!NOTE]
+>
+> Кстати, если искали надёжное облако для своих фронтенд-приложений с автодеплоем из GitHub/Gitlab по последнему коммиту за 1 руб./месяц, то вот моя реферальная ссылка: https://timeweb.cloud/r/koddr
+>
+> Регистрируйтесь, оплачивайте хотя бы один месяц хостинга/выделенного сервера и получите от 300 до 2000 руб. на счёт 😉
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+Итак, приступим:
 
-Use the plugin's generator to create new projects.
+1. Прежде всего, заливаем код на GitHub (Gitlab или любой другой).
+2. Заходим в панель управления, раздел [Apps](https://timeweb.cloud/my/apps) и нажимаем кнопку «Добавить».
+3. Выбираем Angular и версию Node.js (например, `20`).
+4. Подключаем свой аккаунт GitHub к облаку и выбираем нужный репозиторий.
+5. Выбираем регион деплоя и самый тариф (хватит и самого дешёвого за 1 руб./месяц).
+6. В настройках приложения вводим команду для сборки (`npm run build`) и директорию с бандлом (`/dist/browser`).
+7. Жмём «Запустить деплой» и немного ждём.
 
-To generate a new application, use:
+В результате, Timeweb Cloud создаст инстанс вашего приложения, получит за вас бесплатный SSL от Let's Encrypt и выдаст URL (в виде: `https://user-repo-XXX123.twc1.net`). Данный URL нужно указать в настройках вашего бота у [BotFather](https://t.me/BotFather) (идём в `Bot Settings` токена и далее в разделы: `Menu Button` и `Configure Mini App`).
 
-```sh
-npx nx g @nx/angular:app demo
-```
+Немного ждём, пока Telegram обновит кэш у бота и отрисует кнопку меню, которая запускает ваш Mini App.
 
-To generate a new library, use:
-
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Всё 🎉
