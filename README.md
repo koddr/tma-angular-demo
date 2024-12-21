@@ -2,7 +2,7 @@
 
 <a href="https://t.me/tma_angular_demo_bot" target="_blank"><img src="https://github.com/user-attachments/assets/6bc9f631-b8ae-4b70-a522-c9c541ee2906" width="196" alt="Telegram Mini App demo" align="right" /></a>
 
-Презентация доступна в формате PDF по ссылке: https://disk.yandex.ru/i/Mb3w8jf7BsJ-sA
+Презентация доступна в формате PDF по ссылке: https://disk.yandex.ru/i/oKmdRFDJsO7sZw
 
 Демо содержит пример полноценного [Telegram Mini Apps](https://core.telegram.org/bots/webapps) проекта на Angular, который вы можете взять за основу своих проектов.
 
