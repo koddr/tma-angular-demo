@@ -13,7 +13,7 @@
 - [Angular](https://angular.dev) v19.0.5
 - [NgRx Signals](https://ngrx.io/guide/signals) v19.0.0
 - [Nx](https://nx.dev) v20.3.0
-- [Taiga UI](https://taiga-ui.dev) v4.18.0
+- [Taiga UI](https://taiga-ui.dev) v4.19.0
 - [@telegram-apps/sdk](https://github.com/Telegram-Mini-Apps/telegram-apps) v2.11.0
 - [angularx-qrcode](https://github.com/cordobo/angularx-qrcode) v19.0.0
 - [canvas-confetti](https://github.com/catdad/canvas-confetti) v1.9.3
