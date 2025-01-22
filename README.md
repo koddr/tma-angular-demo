@@ -10,11 +10,11 @@
 
 Используются следующие версии библиотек:
 
-- [Angular](https://angular.dev) v19.0.5
+- [Angular](https://angular.dev) v19.1.2
 - [NgRx Signals](https://ngrx.io/guide/signals) v19.0.0
-- [Nx](https://nx.dev) v20.3.0
-- [Taiga UI](https://taiga-ui.dev) v4.19.0
-- [@telegram-apps/sdk](https://github.com/Telegram-Mini-Apps/telegram-apps) v2.11.0
+- [Nx](https://nx.dev) v20.3.2
+- [Taiga UI](https://taiga-ui.dev) v4.21.0
+- [@telegram-apps/sdk](https://github.com/Telegram-Mini-Apps/telegram-apps) v2.11.3
 - [angularx-qrcode](https://github.com/cordobo/angularx-qrcode) v19.0.0
 - [canvas-confetti](https://github.com/catdad/canvas-confetti) v1.9.3
 
@@ -65,7 +65,7 @@ npm start
 Немного ждём, пока Telegram обновит кэш у бота и отрисует кнопку меню, которая запускает ваш Mini App.
 
 > [!TIP]
-> 
+>
 > Таким образом, если ваша Mini App является основной взаимодействия бота и пользователя, — вам не нужно делать классического бота (на Python/Go/Node.js/...) и тратить на это время. Ваше веб-приложение на Angular уже будет доступно из главного меню бота и по кнопке «Открыть» (Open) в списке всех чатов приложения Telegram на всех платформах.
 
 Всё! Пользуйтесь на здоровье 🎉
