@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "19.1.2",
     "@angular/language-service": "19.1.2",
     "@eslint/js": "9.17.0",
-    "@nx/angular": "20.3.2",
+    "@nx/angular": "21.5.1",
     "@nx/eslint": "20.3.2",
     "@nx/eslint-plugin": "20.3.2",
     "@nx/jest": "20.3.2",
